@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Server MOTD</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Verdana, sans-serif;
+            background-color: #0a0a0a;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        .motd-container {
+            background-color: #1e1e1e;
+            border: 3px solid #1a1a1a;
+            min-height: 100vh;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2c5aa0 0%, #1a3d7a 100%);
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .server-name {
+            font-family: Arial, sans-serif;
+            font-size: 36px;
+            font-weight: bold;
+            color: #ffffff;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .description {
+            font-family: Arial, sans-serif;
+            font-size: 22px;
+            font-weight: bold;
+            color: #ffffff;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        .content {
+            padding: 30px;
+        }
+
+        .section {
+            margin-bottom: 35px;
+            background: #252525;
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 4px solid #2c5aa0;
+            transition: transform 0.2s;
+        }
+
+        .section:hover {
+            transform: translateX(5px);
+        }
+
+        .section-title {
+            font-family: Arial, sans-serif;
+            font-size: 28px;
+            font-weight: bold;
+            color: #e0e0e0;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #2c5aa0;
+            padding-bottom: 10px;
+        }
+
+        .section-text {
+            font-size: 14px;
+            line-height: 1.8;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        ol {
+            margin-left: 25px;
+            color: #ffffff;
+        }
+
+        ol li {
+            margin-bottom: 12px;
+            font-size: 14px;
+            line-height: 1.8;
+            padding-left: 10px;
+        }
+
+        ol li::marker {
+            color: #2c5aa0;
+            font-weight: bold;
+        }
+
+        ul {
+            list-style-type: none;
+            margin-left: 0;
+            color: #ffffff;
+        }
+
+        ul li {
+            margin-bottom: 12px;
+            font-size: 14px;
+            line-height: 1.8;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        ul li::before {
+            content: "▸";
+            color: #2c5aa0;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .admin-group {
+            margin-bottom: 20px;
+            background: #2a2a2a;
+            padding: 15px;
+            border-radius: 5px;
+        }
+
+        .admin-group-title {
+            font-weight: bold;
+            color: #2c5aa0;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        .admin-list ul {
+            margin-left: 10px;
+        }
+
+        .addon-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 12px;
+            margin-top: 15px;
+        }
+
+        .addon-item {
+            background: linear-gradient(135deg, #2a2a2a 0%, #1f1f1f 100%);
+            padding: 12px;
+            border-radius: 6px;
+            font-size: 13px;
+            color: #ffffff;
+            border: 1px solid #333;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .addon-item:hover {
+            border-color: #2c5aa0;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(44, 90, 160, 0.3);
+        }
+
+        .footer {
+            background: #1a1a1a;
+            padding: 20px;
+            text-align: center;
+            color: #888;
+            font-size: 12px;
+            border-top: 2px solid #2c5aa0;
+        }
+
+        a {
+            color: #4a9eff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="motd-container">
+        <div class="header">
+            <div class="server-name">🎮 Dein Server Name</div>
+            <div class="description">Willkommen auf unserem Server. Viel Spaß!</div>
+        </div>
+
+        <div class="content">
+            <div class="section">
+                <div class="section-title">👋 Willkommen auf unserem Server!</div>
+                <div class="section-text">
+                    Wir freuen uns, dich hier begrüßen zu dürfen. Bitte lies die Serverregeln und habe Spaß!
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">📋 Serverregeln</div>
+                <ol>
+                    <li>Respektiere alle Spieler und Admins</li>
+                    <li>Kein RDM (Random Deathmatch)</li>
+                    <li>Kein Propkill oder Propspam</li>
+                    <li>Nutze keine Exploits oder Cheats</li>
+                    <li>Folge den Anweisungen der Admins</li>
+                </ol>
+            </div>
+
+            <div class="section">
+                <div class="section-title">ℹ️ Wichtige Informationen</div>
+                <ul>
+                    <li>Nutze <strong>!help</strong> für eine Liste aller verfügbaren Befehle</li>
+                    <li>Unser Discord: <a href="https://discord.gg/deinserver" target="_blank">discord.gg/deinserver</a></li>
+                    <li>Spenden unterstützen den Server: <a href="https://deine-website.de/donate" target="_blank">deine-website.de/donate</a></li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <div class="section-title">🔧 Installierte Addons</div>
+                <div class="addon-grid">
+                    <div class="addon-item">ULX Admin Mod</div>
+                    <div class="addon-item">ULib</div>
+                    <div class="addon-item">DarkRP</div>
+                    <div class="addon-item">Photon</div>
+                    <div class="addon-item">Wiremod</div>
+                    <div class="addon-item">PAC3</div>
+                    <div class="addon-item">M9K Weapons</div>
+                    <div class="addon-item">SCars</div>
+                    <div class="addon-item">Precision Tool</div>
+                    <div class="addon-item">Stacker</div>
+                    <div class="addon-item">Anti-Cheat</div>
+                    <div class="addon-item">Custom Jobs</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">👥 Unser Admin-Team</div>
+                <div class="admin-group">
+                    <div class="admin-group-title">🔴 Superadmins</div>
+                    <div class="admin-list">
+                        <ul>
+                            <li>ServerOwner</li>
+                            <li>HeadAdmin</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="admin-group">
+                    <div class="admin-group-title">🟡 Admins</div>
+                    <div class="admin-list">
+                        <ul>
+                            <li>Admin1</li>
+                            <li>Admin2</li>
+                            <li>Admin3</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="admin-group">
+                    <div class="admin-group-title">🟢 Moderatoren</div>
+                    <div class="admin-list">
+                        <ul>
+                            <li>Moderator1</li>
+                            <li>Moderator2</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            Viel Spaß auf dem Server! | Bei Fragen wende dich an einen Admin
+        </div>
+    </div>
+</body>
+</html>
