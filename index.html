@@ -25,7 +25,7 @@
         }
 
         .header {
-            background: linear-gradient(135deg, #2c5aa0 0%, #1a3d7a 100%);
+            background: linear-gradient(135deg, #6a0dad 0%, #3d0070 100%);
             padding: 40px 30px;
             text-align: center;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
@@ -57,7 +57,7 @@
             background: #252525;
             padding: 25px;
             border-radius: 8px;
-            border-left: 4px solid #2c5aa0;
+            border-left: 4px solid #6a0dad;
             transition: transform 0.2s;
         }
 
@@ -71,7 +71,7 @@
             font-weight: bold;
             color: #e0e0e0;
             margin-bottom: 15px;
-            border-bottom: 2px solid #2c5aa0;
+            border-bottom: 2px solid #6a0dad;
             padding-bottom: 10px;
         }
 
@@ -95,7 +95,7 @@
         }
 
         ol li::marker {
-            color: #2c5aa0;
+            color: #6a0dad;
             font-weight: bold;
         }
 
@@ -115,52 +115,149 @@
 
         ul li::before {
             content: "▸";
-            color: #2c5aa0;
+            color: #6a0dad;
             font-weight: bold;
             position: absolute;
             left: 0;
         }
 
-        .admin-group {
-            margin-bottom: 20px;
+        /* ── RULES TABS ── */
+        .rules-tabs {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 18px;
+            flex-wrap: wrap;
+        }
+
+        .rules-tab {
             background: #2a2a2a;
-            padding: 15px;
-            border-radius: 5px;
-        }
-
-        .admin-group-title {
-            font-weight: bold;
-            color: #2c5aa0;
-            margin-bottom: 10px;
-            font-size: 16px;
-        }
-
-        .admin-list ul {
-            margin-left: 10px;
-        }
-
-        .addon-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-            gap: 12px;
-            margin-top: 15px;
-        }
-
-        .addon-item {
-            background: linear-gradient(135deg, #2a2a2a 0%, #1f1f1f 100%);
-            padding: 12px;
-            border-radius: 6px;
+            border: 2px solid #3a3a3a;
+            color: #aaaaaa;
             font-size: 13px;
-            color: #ffffff;
-            border: 1px solid #333;
-            text-align: center;
-            transition: all 0.3s;
+            padding: 8px 18px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: Verdana, sans-serif;
+            transition: all 0.2s;
         }
 
-        .addon-item:hover {
-            border-color: #2c5aa0;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(44, 90, 160, 0.3);
+        .rules-tab:hover {
+            border-color: #6a0dad;
+            color: #ffffff;
+        }
+
+        .rules-tab.active {
+            background: #6a0dad;
+            border-color: #6a0dad;
+            color: #ffffff;
+        }
+
+        .rules-content {
+            padding-top: 5px;
+        }
+
+        /* ── TEAM CAROUSEL ── */
+        .team-carousel {
+            overflow: hidden;
+            position: relative;
+        }
+
+        .team-pages {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            width: 200%;
+        }
+
+        .team-page {
+            width: 50%;
+            flex-shrink: 0;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .team-card {
+            background: #2a2a2a;
+            border-radius: 5px;
+            padding: 15px 10px;
+            text-align: center;
+        }
+
+        .team-card.placeholder {
+            opacity: 0.4;
+        }
+
+        .team-card-name {
+            font-weight: bold;
+            color: #9b30e8;
+            font-size: 14px;
+            margin-bottom: 6px;
+            word-break: break-word;
+        }
+
+        .team-card.placeholder .team-card-name {
+            color: #888;
+        }
+
+        .team-card-rank {
+            font-size: 12px;
+            color: #cccccc;
+        }
+
+        .team-card.placeholder .team-card-rank {
+            color: #555;
+        }
+
+        /* carousel controls */
+        .carousel-controls {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .carousel-btn {
+            background: #6a0dad;
+            border: none;
+            color: #ffffff;
+            font-size: 13px;
+            padding: 6px 18px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: Verdana, sans-serif;
+            transition: background 0.2s;
+        }
+
+        .carousel-btn:hover {
+            background: #8b20d4;
+        }
+
+        .carousel-dots {
+            display: flex;
+            gap: 8px;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #444;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .dot.active {
+            background: #6a0dad;
+        }
+
+        .page-label {
+            font-size: 12px;
+            color: #888;
         }
 
         .footer {
@@ -169,11 +266,11 @@
             text-align: center;
             color: #888;
             font-size: 12px;
-            border-top: 2px solid #2c5aa0;
+            border-top: 2px solid #6a0dad;
         }
 
         a {
-            color: #4a9eff;
+            color: #a855f7;
             text-decoration: none;
         }
 
@@ -185,7 +282,7 @@
 <body>
     <div class="motd-container">
         <div class="header">
-            <div class="server-name">🎮 MRP | Nato Vs Terror | Serious RP | By FG 🎮</div>
+            <div class="server-name">☢️ SCP RP | Serious RP | By FG ☢️</div>
             <div class="description">Willkommen auf unserem Server. Viel Spaß!</div>
         </div>
 
@@ -200,7 +297,9 @@
             <div class="section">
                 <div class="section-title">📋 Serverregeln</div>
                 <ol>
-                    <li>https://google.com</li>
+                    <li><a href="https://google.com" target="_blank">Allgemeine Regeln</a></li>
+                    <li><a href="https://google.com" target="_blank">Job Regeln</a></li>
+                    <li><a href="https://google.com" target="_blank">Discord Regeln</a></li>
                 </ol>
             </div>
 
@@ -209,44 +308,31 @@
                 <ul>
                     <li>Nutze <strong>!help</strong> für eine Liste aller verfügbaren Befehle</li>
                     <li>Unser Discord: <a href="https://discord.gg/us5CMjGD95" target="_blank">https://discord.gg/us5CMjGD95</a></li>
-                    <li>Spenden unterstützen den Server: <a href="https://www.paypal.com/ncp/payment/AHWMHFQRT9EPU" target="_blank">PayPal</a></li>
                 </ul>
             </div>
 
             <div class="section">
-                <div class="section-title">👥 Unser Admin-Team</div>
-                <div class="admin-group">
-                    <div class="admin-group-title">Inhaber</div>
-                    <div class="admin-list">
-                        <ul>
-                            <li>Tekki</li>
-                            <li>Leon Tekki</li>
-                        </ul>
+                <div class="section-title">👥 Unser Leitungs-Team</div>
+                <div class="team-grid">
+                    <div class="team-card">
+                        <div class="team-card-name">Tekki</div>
+                        <div class="team-card-rank">Owner</div>
                     </div>
-                </div>
-                <div class="admin-group">
-                    <div class="admin-group-title">Stv. Inhaber</div>
-                    <div class="admin-list">
-                        <ul>
-                            <li>Tim Tekki</li>
-                        </ul>
+                    <div class="team-card">
+                        <div class="team-card-name">LeonTekki</div>
+                        <div class="team-card-rank">Stv. Owner</div>
                     </div>
-                </div>
-                <div class="admin-group">
-                    <div class="admin-group-title">Team Leitung</div>
-                    <div class="admin-list">
-                        <ul>
-                            <li>-</li>
-                        </ul>
+                    <div class="team-card">
+                        <div class="team-card-name">TimTekki</div>
+                        <div class="team-card-rank">Community Manager</div>
                     </div>
-                </div>
-                <div class="admin-group">
-                    <div class="admin-group-title">Super Admin</div>
-                    <div class="admin-list">
-                        <ul>
-                            <li>-</li>
-                            <li>-</li>
-                        </ul>
+                    <div class="team-card placeholder">
+                        <div class="team-card-name">NAME</div>
+                        <div class="team-card-rank">RANK</div>
+                    </div>
+                    <div class="team-card placeholder">
+                        <div class="team-card-name">NAME</div>
+                        <div class="team-card-rank">RANK</div>
                     </div>
                 </div>
             </div>
@@ -256,5 +342,16 @@
             Viel Spaß auf dem Server! | Bei Fragen wende dich an einem Teammitglied
         </div>
     </div>
+
+    <script>
+        function showRules(tab) {
+            ['discord','job','allgemein'].forEach(t => {
+                document.getElementById('rules-' + t).style.display = t === tab ? 'block' : 'none';
+            });
+            document.querySelectorAll('.rules-tab').forEach((btn, i) => {
+                btn.classList.toggle('active', ['discord','job','allgemein'][i] === tab);
+            });
+        }
+    </script>
 </body>
 </html>
